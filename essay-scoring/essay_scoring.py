@@ -8,6 +8,8 @@ import numpy as np
 import random
 import altair as alt
 
+st.set_page_config("Essay Analysis", None, "wide", "auto")
+
 """
 # Essay Scoring Example
 
@@ -70,8 +72,11 @@ if option == "advanced":
 with col1:
     annotated_text(*annotations)
 
+dist = np.random.normal(20, 10, 1000)
+dist = [x for x in dist if x >= 0]
+
 df = pd.DataFrame(
-    [random.randint(0,50) for i in range(100)],
+    dist,
     columns=['length']
 )
 
